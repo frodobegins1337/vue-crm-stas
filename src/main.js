@@ -5,6 +5,7 @@ import './registerServiceWorker'
 import router from './router'
 import dateFilter from './filters/date.filter'
 import messagePlugin from '@/utils/message.plugin'
+import tooltipDirective from '@/directives/tooltip.directive'
 import Loader from '@/components/app/Loader'
 import store from './store'
 import 'materialize-css/dist/js/materialize.min'
@@ -21,6 +22,7 @@ Vue.filter('date', dateFilter)
 Vue.use(Vuelidate)
 Vue.use(messagePlugin)
 Vue.component('Loader', Loader)
+Vue.directive('tooltip', tooltipDirective)
 
 firebase.initializeApp({
   apiKey: "AIzaSyA1u9X7sHjPsIWA8DEprxUqurOrYZnStC8",
