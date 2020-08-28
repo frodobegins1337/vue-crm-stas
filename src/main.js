@@ -14,11 +14,13 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
 import currencyFilter from './filters/currency.filter'
+import localizeFilter from './filters/localize.filter'
 
 
 Vue.config.productionTip = false
 
 Vue.filter('currency', currencyFilter)
+Vue.filter('localize', localizeFilter)
 Vue.filter('date', dateFilter)
 Vue.use(Vuelidate)
 Vue.use(messagePlugin)
