@@ -1,6 +1,6 @@
 <template>
   <div class="grey darken-1 empty-layout">
-    <router-view />
+    <router-view/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import messages from '@/utils/messages'
 export default {
   computed: {
     error() {
-     return this.$store.getters.error
+      return this.$store.getters.error
     }
   },
   watch: {

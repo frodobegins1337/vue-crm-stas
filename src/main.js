@@ -6,6 +6,7 @@ import './registerServiceWorker'
 import router from './router'
 import dateFilter from './filters/date.filter'
 import messagePlugin from '@/utils/message.plugin'
+import titlePlugin from '@/utils/title.plugin'
 import tooltipDirective from '@/directives/tooltip.directive'
 import Loader from '@/components/app/Loader'
 import store from './store'
@@ -15,7 +16,7 @@ import 'firebase/auth'
 import 'firebase/database'
 import currencyFilter from './filters/currency.filter'
 import localizeFilter from './filters/localize.filter'
-
+import VueMeta from 'vue-meta'
 
 Vue.config.productionTip = false
 
@@ -24,6 +25,8 @@ Vue.filter('localize', localizeFilter)
 Vue.filter('date', dateFilter)
 Vue.use(Vuelidate)
 Vue.use(messagePlugin)
+Vue.use(titlePlugin)
+Vue.use(VueMeta, {refreshOnceOnNavigation: true})
 Vue.component('Loader', Loader)
 Vue.component('Paginate', Paginate)
 Vue.directive('tooltip', tooltipDirective)

@@ -1,19 +1,20 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>Категории</h3>
+      <h3>{{'Categories'|localize}}</h3>
     </div>
     <section>
       <Loader v-if="loading"/>
       <div class="row" v-else>
         <CategoryCreate @created="addNewCategory"/>
-        <CategoryEdit 
+
+        <CategoryEdit
           v-if="categories.length"
           :categories="categories"
           :key="categories.length + updateCount"
           @updated="updateCategories"
         />
-        <p v-else class="center">Категорий пока что нет</p>
+        <p v-else class="center">{{'NoCategories'|localize}}</p>
       </div>
     </section>
   </div>
@@ -25,17 +26,23 @@ import CategoryEdit from '@/components/CategoryEdit'
 
 export default {
   name: 'categories',
+  metaInfo() {
+    return {
+      title: this.$title('Menu_Categories')
+    }
+  },
   data: () => ({
     categories: [],
     loading: true,
     updateCount: 0
   }),
-  components: {
-    CategoryCreate, CategoryEdit
-  },
   async mounted() {
     this.categories = await this.$store.dispatch('fetchCategories')
     this.loading = false
+  },
+  components: {
+    CategoryCreate,
+    CategoryEdit
   },
   methods: {
     addNewCategory(category) {
@@ -50,3 +57,4 @@ export default {
   }
 }
 </script>
+
