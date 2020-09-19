@@ -9,7 +9,7 @@
   "dependencies": {
     "chart.js": "^2.9.3",
     "core-js": "^3.6.5",
-    "firebase": "^7.18.0",
+    "firebase": "^7.21.0",
     "lodash": "^4.17.20",
     "materialize-css": "^1.0.0-rc.2",
     "register-service-worker": "^1.7.1",
@@ -27,7 +27,7 @@
     "@vue/cli-plugin-pwa": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-service": "^4.5.6",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
